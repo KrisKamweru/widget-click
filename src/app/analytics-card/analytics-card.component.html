@@ -1,18 +1,25 @@
-<div class="clr-row">
-    <div class="clr-col-sm-12 clr-col-md-12">
-        <div class="my-card" *ngFor = "let item of content">
+<div class="container">
+    <div class="bg-card">
+        <div class="widget-card"
+        *ngFor = "let item of content"
+        (click)="log(item)">
+            
             <div class="clr-row">
+                
                 <div class="clr-col-sm-12 clr-col-md-5">
                     <div class="iframe-place-holder">
-                        <p>iFrame Content</p>
-                        <iframe [src]="returnLink(item)" *ngIf= "showFrame" allowfullscreen></iframe>
+                        <iframe></iframe>
                     </div>
                 </div>
+
                 <div class="clr-col-sm-12 clr-col-md-7">
-                    <h3>Title</h3>
-                    <h2></h2>
+                    <h3>{{ item.websiteName }}</h3>
+                    <hr>
+                    <p>Views : {{ item.views }}</p>
                 </div>
+                
             </div>
+
         </div>
     </div>
 </div>

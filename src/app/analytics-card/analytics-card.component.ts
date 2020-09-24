@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-analytics-card',
@@ -9,38 +9,36 @@ export class AnalyticsCardComponent implements OnInit {
 
   constructor() { }
 
-  // url: string = "https://www.youtube.com/embed/s4BibernJxU";
-  url: string = "https://www.google.com";
-  showFrame: boolean = false;
-
+  /*
+  Each card is populated with data from the list of objects, 'content'
+  Each object contains 3 fields, namely iframeLink, which is the link for the iFrame, 
+    websiteName, and views.
+  Populate accordingly
+  */
+  
   @Input('content') content: any = [
     {
-      iframeLink: "",
-      websiteName: "",
+      iframeLink: " ",
+      websiteName: " ",
       views: 0,
     }
   ]
 
+
+  /* 
+  Emitter that emits the json data of the card clicked for further use
+  */
+  @Output('widget') widget = new EventEmitter();
+
   ngOnInit(): void {
-    this.content = [
-      {
-        iframeLink: "https://www.youtube.com/embed/s4BibernJxU",
-        websiteName: "",
-        views: 0,
-      }
-    ]
-
-    this.iFrameToggle()
+    // for (let item of this.content) {
+    //   item.iframeLink = "https://www.youtube.com/embed/s4BibernJxU";
+    // }
   }
 
-  returnLink(item) {
-    return item.iframeLink;
-  }
-
-  iFrameToggle() {
-    this.showFrame = false;
-    this.showFrame = true;
-    console.log(this.url);
+  log(item) {
+    console.log(item);
+    this.widget.emit(item);
   }
 
 }

@@ -1,0 +1,115 @@
+/*
+    ========== IMPORTS ==========
+*/
+
+/*
+    Import Google Fonts. Includes 400 (regular) and 700 (bold) weights for Nunito, Raleway and Roboto
+*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap');
+/*  ------ * ------ */
+
+
+/*
+    ========== COLUMNS ==========
+        Columns for rows and columns, and incuded here for modularity..
+        Uses flexbox to achieve responsiveness.
+        Taken from Project Clarity CSS
+        https://clarity.design/documentation/cards
+*/
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clr-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -0.6rem;
+    margin-left: -0.6rem;
+}
+ 
+ .clr-col-md-7, .clr-col-md-6, .clr-col-md-5, .clr-col-sm-12 {
+  width: 100%;
+  min-height: 0.05rem;
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
+}
+
+@media (min-width: 576px) {
+    .clr-col-sm-12 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .clr-col-md-5 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 41.6666666667%;
+        flex: 0 0 41.6666666667%;
+        max-width: 41.6666666667%;
+    }
+
+    .clr-col-md-6 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .clr-col-md-7 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 58.3333333333%;
+        flex: 0 0 58.3333333333%;
+        max-width: 58.3333333333%;
+    }
+
+    .clr-col-md-12 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+}
+/*  ------ * ------ */
+
+/*
+    ========== CUSTOM STYLES ==========
+        Custom styles
+*/
+
+div {
+    font-family: 'Nunito', 'Raleway', 'Roboto', sans-serif;
+}
+
+.my-card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0.15rem 15px 0 #0e161b;
+
+    .iframe-place-holder {
+        background-color: #afafaf;
+        border: 1px solid black;
+    
+        iframe {
+            width: 100%;
+            border: none;
+            height: auto;
+        }
+        
+        p {
+            font-size: 14px;
+            letter-spacing: normal;
+            text-align: center;
+        }
+    }
+}
+

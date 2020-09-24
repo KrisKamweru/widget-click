@@ -1,0 +1,18 @@
+<div class="clr-row">
+    <div class="clr-col-sm-12 clr-col-md-12">
+        <div class="my-card" *ngFor = "let item of content">
+            <div class="clr-row">
+                <div class="clr-col-sm-12 clr-col-md-5">
+                    <div class="iframe-place-holder">
+                        <p>iFrame Content</p>
+                        <iframe [src]="returnLink(item)" *ngIf= "showFrame" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="clr-col-sm-12 clr-col-md-7">
+                    <h3>Title</h3>
+                    <h2></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

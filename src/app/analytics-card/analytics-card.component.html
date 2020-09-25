@@ -6,16 +6,20 @@
             
             <div class="clr-row">
                 
-                <div class="clr-col-sm-12 clr-col-md-5">
+                <div class="clr-col-sm-12 clr-col-md-3">
                     <div class="iframe-place-holder">
                         <iframe></iframe>
                     </div>
                 </div>
 
-                <div class="clr-col-sm-12 clr-col-md-7">
+                <div class="clr-col-sm-12 clr-col-md-9">
                     <h3>{{ item.websiteName }}</h3>
                     <hr>
-                    <p>Views : {{ item.views }}</p>
+                    <p>
+                        Views : {{ item.views }}
+                        <br>
+                        Widget created on : {{ item.creationDate }}
+                    </p>
                 </div>
                 
             </div>

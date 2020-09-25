@@ -18,9 +18,11 @@ export class AnalyticsCardComponent implements OnInit {
   
   @Input('content') content: any = [
     {
+      widgetID: " ",
       iframeLink: " ",
       websiteName: " ",
       views: 0,
+      creationDate: " "
     }
   ]
 
@@ -36,9 +38,9 @@ export class AnalyticsCardComponent implements OnInit {
     // }
   }
 
-  log(item) {
+  log(item: any) {
     console.log(item);
-    this.widget.emit(item);
+    this.widget.emit(item.widgetID);
   }
 
 }
